@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cff731ad8561ec42b13cc27d98a5e01, type: 3}
+  m_Name: StarPlatinum
+  m_EditorClassIdentifier: Assembly-CSharp::StandDefinition
+  standName: Star Platinum
+  strength: 10
+  durability: 10
+  range: 3
+  animator: {fileID: 9100000, guid: 0a33c31573a5bb24b959c412aa216df4, type: 2}
+  followOffset: {x: 0.9, y: -0.45}
+  followSpeed: 7
+  rotationSpeed: 720
+  summonStartLocalOffset: {x: 0, y: 0.25, z: 0}
+  summonStartAlpha: 0.15
+  summonBlendTime: 0.25
+  lightDamage: 8
+  heavyDamage: 14
+  barrageDamage: 2
+  lightKnockback: 2.5
+  heavyKnockback: 4
+  barrageKnockback: 1
+  lightWindup: 0.1
+  lightActiveTime: 0.12
+  lightCooldown: 1
+  heavyWindup: 0.16
+  heavyActiveTime: 0.16
+  heavyCooldown: 0.42
+  barrageTickInterval: 0.08
+  lightMoveMultiplier: 0.72
+  heavyMoveMultiplier: 0.55
+  barrageMoveMultiplier: 0.35
+  barrageHandPrefab: {fileID: 4247946997332856916, guid: 5de4738dc3b753d41817b6c2011a0772, type: 3}
+  barrageHandSpawnInterval: 0.025
+  barrageHandLifetime: 0.22
+  barrageHandMinSpeed: 5
+  barrageHandMaxSpeed: 9
+  barrageHandMinAlpha: 0.35
+  barrageHandMaxAlpha: 0.85
+  barrageHandSpread: {x: 0.4, y: 0.2}
