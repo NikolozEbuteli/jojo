@@ -63,13 +63,34 @@ public abstract class StandController : NetworkBehaviour, IDamageable
         if (standData != null && standAnimator != null && standData.animator != null)
             standAnimator.runtimeAnimatorController = standData.animator;
 
+        // NEW: Position the stand at the owner before appearance animation
+        if (IsServer)
+        {
+            Transform ownerTransform = GetOwnerTransform();
+            if (ownerTransform != null && standData != null)
+            {
+                Vector2 aimDir = GetOwnerAimDirection();
+                if (aimDir.sqrMagnitude < 0.0001f)
+                    aimDir = Vector2.right;
+                else
+                    aimDir.Normalize();
+
+                Vector2 right = new Vector2(aimDir.y, -aimDir.x);
+                Vector2 targetPos =
+                    (Vector2)ownerTransform.position +
+                    right * standData.followOffset.x +
+                    aimDir * standData.followOffset.y;
+
+                transform.position = targetPos;
+            }
+        }
+
         if (!appearancePlayed)
         {
             appearancePlayed = true;
             StartCoroutine(SummonAppearanceRoutine());
         }
     }
-
     public override void OnNetworkDespawn()
     {
         allStands.Remove(this);

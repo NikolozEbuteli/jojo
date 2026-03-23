@@ -342,6 +342,9 @@ public class PlayerController : NetworkBehaviour
 
         stand.InitializeOwner(OwnerClientId);
         netObj.Spawn();
+        
+        // ✅ SET POSITION AFTER SPAWN to override NetworkTransform's initial sync
+        standGO.transform.position = spawnPos;
 
         spawnedStand = stand;
         standOut.Value = true;
